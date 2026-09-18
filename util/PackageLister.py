@@ -34,6 +34,38 @@ class PackageLister:
         if not os.path.exists(self.root + path):
             os.makedirs(self.root + path)
 
+    # 数据目录名：本 fork 用 silex_data，上游 Silica 用 silica_data。
+    SILEX_DATA_DIR = "silex_data"
+    LEGACY_DATA_DIR = "silica_data"
+
+    def NormalizeDataDirs(self):
+        """
+        兼容上游 Silica 的 silica_data 目录名。
+
+        本 fork 把数据目录改名成了 silex_data，导致从上游 Silica 迁移过来的包
+        （只有 silica_data）被判定为"未配置"，进而触发交互式脚手架甚至报错。
+        这里为这类包建立 silex_data -> silica_data 的软链接别名：
+        非破坏性、可逆，现有全部代码无需改动。
+        """
+        pkgs = self.root + "Packages"
+        if not os.path.isdir(pkgs):
+            return
+        for folder in os.listdir(pkgs):
+            if folder.lower() == ".ds_store":
+                continue
+            base = os.path.join(pkgs, folder)
+            if not os.path.isdir(base) or os.path.islink(base):
+                continue
+            newd = os.path.join(base, self.SILEX_DATA_DIR)
+            oldd = os.path.join(base, self.LEGACY_DATA_DIR)
+            if not os.path.exists(newd) and os.path.isdir(oldd):
+                try:
+                    os.symlink(self.LEGACY_DATA_DIR, newd)
+                    print("  [兼容] " + folder + ": 已建立 "
+                          + self.SILEX_DATA_DIR + " -> " + self.LEGACY_DATA_DIR)
+                except Exception as e:
+                    print("  [兼容] " + folder + ": 建立别名失败 " + str(e))
+
     def ListDirNames(self):
         """
         List the file names for package entries.

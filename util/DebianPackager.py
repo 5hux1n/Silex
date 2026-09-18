@@ -344,7 +344,7 @@ class DebianPackager(object):
 
         return control_file
 
-    def CreateDEB(self, bundle_id, recorded_version):
+    def CreateDEB(self, bundle_id, recorded_version, repo_settings=None):
         """
         Copy all .deb files from temp/ to docs/pkg/, preserving original filenames.
         The newest .deb is also copied as bundle_id.deb for direct download links.
@@ -380,12 +380,21 @@ class DebianPackager(object):
             internal = Dpkg(deb_path)
             replacements = {}
 
-            # Find matching tweak_data by bundle_id or internal Package name
+            # Find matching tweak_data.
+            # 精确 bundle_id 必须优先：同一份包常同时有 arm64 条目与 roothide 条目，
+            # 两者 bundle_id 不同但 deb 内部的 Package 名相同。若先按 internal.package
+            # 匹配，就会把 arm64 条目的 Section/Name 套到 roothide 包上，
+            # 且结果取决于 os.listdir 顺序 —— 这正是包间显示不一致的另一个来源。
             tweak_data = None
             for t in tweak_release:
-                if t['bundle_id'] == bundle_id or t['bundle_id'] == internal.package:
+                if t['bundle_id'] == bundle_id:
                     tweak_data = t
                     break
+            if tweak_data is None:
+                for t in tweak_release:
+                    if t['bundle_id'] == internal.package:
+                        tweak_data = t
+                        break
 
             if tweak_data:
                 # Always inject tagline as Description
@@ -395,11 +404,38 @@ class DebianPackager(object):
                 except:
                     pass
 
+                # ---- 核心修复 ----
+                # CompileControl 会算出 Depiction / SileoDepiction / ModernDepiction /
+                # Icon / Section / Author / Maintainer ... 但旧实现只把其中 4 个字段
+                # 写回 deb，导致索引里的元数据取决于【源 deb 里原本带了什么】：
+                # 带着这些字段的包（如弹幕助手）在 Sileo 走原生现代样式，
+                # 没带的包则回退旧样式 —— 这正是各包显示效果不一致的根因。
+                # 现在直接把 CompileControl 的全部字段套用上去，保证一致。
+                if repo_settings:
+                    try:
+                        for _line in self.CompileControl(tweak_data, repo_settings).splitlines():
+                            if _line.startswith(' ') or ': ' not in _line:
+                                continue
+                            _k, _v = _line.split(': ', 1)
+                            # Architecture / Version / Package 以 deb 自身为准
+                            # （Package 由下方 roothide 分支按需改写）。
+                            # Name 则采用 index.json —— 它是仓库展示元数据的唯一来源，
+                            # 否则会出现"同一个包在不同地方名字不同"的不一致。
+                            if _k in ('Architecture', 'Version', 'Package'):
+                                continue
+                            replacements[_k] = _v
+                    except Exception:
+                        pass
+
                 # For roothide: fix Package name, Section, display Name
                 if internal.package != bundle_id:
                     replacements['Package'] = bundle_id
-                    replacements['Section'] = tweak_data['section']
-                    if tweak_data['section'] == 'Roothide':
+                    try:
+                        if tweak_data['section']:
+                            replacements['Section'] = tweak_data['section']
+                    except Exception:
+                        pass
+                    if tweak_data.get('section') == 'Roothide':
                         replacements['Name'] = tweak_data['name'] + ' (Roothide)'
 
             if replacements:

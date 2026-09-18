@@ -35,6 +35,7 @@ def main():
     PackageLister.CreateFolder("docs/assets")
     PackageLister.CreateFolder("docs/api")
 
+    PackageLister.NormalizeDataDirs()
     DebianPackager.CheckForSilexData()
 
     tweak_release = PackageLister.GetTweakRelease()
@@ -149,7 +150,7 @@ def main():
     for tweak_data in buildable_release:
         control_file = DebianPackager.CompileControl(tweak_data, repo_settings)
         PackageLister.CreateFile("temp/" + tweak_data['bundle_id'] + "/DEBIAN/control", control_file)
-        DebianPackager.CreateDEB(tweak_data['bundle_id'], tweak_data['version'])
+        DebianPackager.CreateDEB(tweak_data['bundle_id'], tweak_data['version'], repo_settings)
         shutil.copy(root + "temp/" + tweak_data['bundle_id'] + ".deb", root + "docs/pkg/" + tweak_data['bundle_id'] + ".deb")
 
     DebianPackager.CompilePackages()
