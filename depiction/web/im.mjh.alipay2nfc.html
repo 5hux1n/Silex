@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=0">
+    <title>Alipay2NFC</title>
+    <link rel="stylesheet" type="text/css" href="../../web/index.css">
+    <style>a, .tint, .table-btn:after {color: #27BEF5} .active {color: #27BEF5;border-bottom: 2px solid #27BEF5;}</style>
+    <script src="../../web/index.js"></script>
+    <meta name="description" content="Alipay2NFC by Junhong · 14.0 to 17.0">
+    <meta property="og:title" content="Alipay2NFC">
+    <meta property="og:description" content="Alipay2NFC by Junhong · 14.0 to 17.0">
+    <meta property="og:image" content="../../assets/im.mjh.alipay2nfc/banner.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alipay2NFC">
+    <meta name="twitter:description" content="Alipay2NFC by Junhong · 14.0 to 17.0">
+    <meta name="twitter:image" content="https://apt.mjh.im/assets/im.mjh.alipay2nfc/banner.png">
+    <meta name="theme-color" content="#27BEF5">
+</head>
+<body>
+    <div class="body">
+        <div style="background-image: url(../../assets/im.mjh.alipay2nfc/banner.png)" class="banner_underlay"></div>
+        <div class="package package_head">
+            <img src="../../assets/im.mjh.alipay2nfc/icon.png">
+            <div class="package_info">
+                <h1 class="package_name">Alipay2NFC</h1>
+                <p class="package_caption">Junhong</p>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="nav_btn active tweak_info_btn" onclick="swap('.changelog','.tweak_info');">详情 Details</div>
+            <div class="nav_btn changelog_btn" onclick="swap('.tweak_info','.changelog');">更新日志 Changelog</div>
+        </div>
+        <div class="tweak_info">
+            <p class="compatibility"><b>兼容性 Compatibility：</b>本插件兼容 iOS 14.0 to 17.0。</p>
+            
+            <div class="md_view">
+                <p><h1>Alipay2NFC</h1>
+<p>把支付宝「碰一碰」的 NFC 唤起重定向到你的第二个支付宝（多开客户端）。</p>
+<p>贴商户的碰一碰贴纸时，iOS 永远只唤起官方支付宝 —— 因为只有它通过了 <code>render.alipay.com</code> 的 AASA 校验，多开包的 bundle id 不在列表里。本插件在官方支付宝收到 URL 的那一刻把它转交给你的多开客户端。</p>
+<h2>效果</h2>
+<pre><code>贴碰一碰贴纸 → 官方支付宝收到 URL → 本插件拦截 → 拉起「支付宝2」进入碰一碰付款页
+</code></pre>
+<h2>特点</h2>
+<ul>
+<li><strong>不需要改 Info.plist，不需要重新签名多开包</strong></li>
+<li><strong>不需要任何前置操作</strong>，装完即用</li>
+<li>多开包的 bundle id 运行时自动发现，任意多开工具都适用</li>
+<li>纯 <code>libobjc</code> 实现，无 CydiaSubstrate 依赖，无配置文件</li>
+<li>开源地址：https://github.com/5hux1n/Alipay2NFC</li>
+</ul>
+<h2>已知限制</h2>
+<p>冷启动贴纸时官方支付宝会先闪一下 —— iOS 只认官方包，必须先把 URL 交给它，插件才有机会转发。</p>
+<hr />
+<h1>English</h1>
+<p>Redirect Alipay's <strong>碰一碰</strong> (tap-to-pay NFC) trigger to your own second / multi-instance Alipay client.</p>
+<p>When you tap a merchant's NFC sticker, iOS always launches the official Alipay — only it passes
+the AASA check for <code>render.alipay.com</code>; the clone's bundle ID is not in the list. This tweak makes
+the official app hand the tap over to your clone the moment it receives the URL.</p>
+<pre><code>Tap NFC sticker → official Alipay receives URL → tweak intercepts → launches &quot;支付宝2&quot; into the tap-to-pay page
+</code></pre>
+<h2>Highlights</h2>
+<ul>
+<li><strong>No <code>Info.plist</code> modification, no re-signing of the clone</strong></li>
+<li><strong>No setup steps</strong> — works right after install</li>
+<li>The clone's bundle ID is discovered at runtime — works with any multi-instance tool</li>
+<li>Pure <code>libobjc</code>, no CydiaSubstrate, no config file</li>
+<li>Source: https://github.com/5hux1n/Alipay2NFC</li>
+</ul>
+<h2>Known limitation</h2>
+<p>On a cold launch the official Alipay briefly appears first — iOS only recognises the official app,
+so the URL must reach it before the tweak can forward it.</p>
+</p>
+            </div>
+            <h3>插件信息 Info</h3>
+            <div class="table">
+                <div class="cell">
+                    <div class="title">开发者 Developer</div>
+                    <div class="text">Junhong</div>
+                    <br><br>
+                </div>
+                <div class="cell">
+                    <div class="title">版本 Version</div>
+                    <div class="text">3.1.0</div>
+                    <br><br>
+                </div>
+                <div class="cell">
+                    <div class="title">兼容性 Compatibility</div>
+                    <div class="text">14.0 to 17.0</div>
+                    <br><br>
+                </div>
+                <div class="cell">
+                    <div class="title">分类 Section</div>
+                    <div class="text">Tweaks</div>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+        <div class="changelog">
+            <div class="changelog_entry">
+                <h4>3.1.0</h4>
+                <div class="md_view"><p>1、贴商户碰一碰贴纸时自动跳转到多开支付宝的付款页<br />
+2、运行时自动发现多开客户端的 bundle id，任意多开工具通用，无需配置<br />
+3、免改 Info.plist、免重新签名<br />
+4、纯 libobjc 实现，无 CydiaSubstrate 依赖，兼容 rootful / rootless / roothide<br />
+5、arm64 + arm64e 双架构</p>
+</div>
+            </div>
+        </div>
+        <div class="caption center footer">Junhong&amp;#x27;s Repo · Updated 2026-09-19</div>
+    </div>
+</body>
+<script>compatible("14.0","17.0","14.0 to 17.0");externalize()</script>
+</html>
