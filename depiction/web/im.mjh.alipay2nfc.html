@@ -36,40 +36,42 @@
             
             <div class="md_view">
                 <p><h1>Alipay2NFC</h1>
-<p>把支付宝「碰一碰」的 NFC 唤起重定向到你的第二个支付宝（多开客户端）。</p>
-<p>贴商户的碰一碰贴纸时，iOS 永远只唤起官方支付宝 —— 因为只有它通过了 <code>render.alipay.com</code> 的 AASA 校验，多开包的 bundle id 不在列表里。本插件在官方支付宝收到 URL 的那一刻把它转交给你的多开客户端。</p>
-<h2>效果</h2>
-<pre><code>贴碰一碰贴纸 → 官方支付宝收到 URL → 本插件拦截 → 拉起「支付宝2」进入碰一碰付款页
-</code></pre>
-<h2>特点</h2>
+<p>让支付宝「碰一碰」唤起你指定的第二个支付宝客户端。</p>
+<h2>解决的问题</h2>
+<p>在越狱设备上用 Crane 之类的工具多开支付宝之后，贴商户的碰一碰贴纸时，系统始终唤起官方客户端，第二个账号用不上 NFC 付款。</p>
+<p>碰一碰贴纸里是一条指向 <code>render.alipay.com</code> 的链接，iOS 按 Universal Link / App Clip 规则投递，而只有官方客户端在该域名下完成过关联声明 —— 多开客户端不在其中，系统不会把链接交给它。</p>
+<h2>做什么</h2>
+<p>本插件在官方客户端处理这次碰一碰的那一刻接管过来，把付款交给你的多开客户端完成。</p>
+<h2>使用</h2>
+<p>打开官方支付宝，贴商户的碰一碰贴纸即可。多开客户端会在后台被唤起，无需提前打开，也不用做任何配置。</p>
+<h2>兼容性</h2>
 <ul>
-<li><strong>不需要改 Info.plist，不需要重新签名多开包</strong></li>
-<li><strong>不需要任何前置操作</strong>，装完即用</li>
-<li>多开包的 bundle id 运行时自动发现，任意多开工具都适用</li>
-<li>纯 <code>libobjc</code> 实现，无 CydiaSubstrate 依赖，无配置文件</li>
-<li>开源地址：https://github.com/5hux1n/Alipay2NFC</li>
+<li>越狱：rootful、rootless、roothide</li>
+<li>架构：arm64、arm64e</li>
+<li>系统：iOS 14 及以上</li>
+<li>多开客户端：任意多开工具生成的客户端</li>
 </ul>
 <h2>已知限制</h2>
-<p>冷启动贴纸时官方支付宝会先闪一下 —— iOS 只认官方包，必须先把 URL 交给它，插件才有机会转发。</p>
+<p>冷启动贴纸时，官方客户端会先生效再转交，因此会短暂出现一下。</p>
 <hr />
 <h1>English</h1>
-<p>Redirect Alipay's <strong>碰一碰</strong> (tap-to-pay NFC) trigger to your own second / multi-instance Alipay client.</p>
-<p>When you tap a merchant's NFC sticker, iOS always launches the official Alipay — only it passes
-the AASA check for <code>render.alipay.com</code>; the clone's bundle ID is not in the list. This tweak makes
-the official app hand the tap over to your clone the moment it receives the URL.</p>
-<pre><code>Tap NFC sticker → official Alipay receives URL → tweak intercepts → launches &quot;支付宝2&quot; into the tap-to-pay page
-</code></pre>
-<h2>Highlights</h2>
+<p>Redirect Alipay's 碰一碰 (NFC tap-to-pay) to the Alipay client of your choice.</p>
+<h2>The problem</h2>
+<p>After duplicating Alipay on a jailbroken device with tools like Crane, tapping a merchant's sticker always launches the official client — the second account can't use NFC payment.</p>
+<p>The sticker carries a link to <code>render.alipay.com</code>. iOS delivers it as a Universal Link / App Clip, and only the official client has an association claim for that domain, so iOS never hands the link to the clone.</p>
+<h2>What it does</h2>
+<p>The tweak takes over at the moment the official client processes the tap and hands the payment to your chosen client.</p>
+<h2>Usage</h2>
+<p>Open the official Alipay and tap the merchant's sticker. The second client is brought up in the background — no need to open it first, and no configuration is required.</p>
+<h2>Compatibility</h2>
 <ul>
-<li><strong>No <code>Info.plist</code> modification, no re-signing of the clone</strong></li>
-<li><strong>No setup steps</strong> — works right after install</li>
-<li>The clone's bundle ID is discovered at runtime — works with any multi-instance tool</li>
-<li>Pure <code>libobjc</code>, no CydiaSubstrate, no config file</li>
-<li>Source: https://github.com/5hux1n/Alipay2NFC</li>
+<li>Jailbreak: rootful, rootless, roothide</li>
+<li>Architecture: arm64, arm64e</li>
+<li>iOS: 14.0+</li>
+<li>Second client: any created by any multi-instance tool</li>
 </ul>
 <h2>Known limitation</h2>
-<p>On a cold launch the official Alipay briefly appears first — iOS only recognises the official app,
-so the URL must reach it before the tweak can forward it.</p>
+<p>On a cold launch the official client briefly takes effect before handing over, so it appears for a moment.</p>
 </p>
             </div>
             <h3>插件信息 Info</h3>
@@ -99,11 +101,7 @@ so the URL must reach it before the tweak can forward it.</p>
         <div class="changelog">
             <div class="changelog_entry">
                 <h4>3.1.0</h4>
-                <div class="md_view"><p>1、贴商户碰一碰贴纸时自动跳转到多开支付宝的付款页<br />
-2、运行时自动发现多开客户端的 bundle id，任意多开工具通用，无需配置<br />
-3、免改 Info.plist、免重新签名<br />
-4、纯 libobjc 实现，无 CydiaSubstrate 依赖，兼容 rootful / rootless / roothide<br />
-5、arm64 + arm64e 双架构</p>
+                <div class="md_view"><p>让支付宝「碰一碰」唤起你指定的第二个客户端；适配 rootful / rootless / roothide，arm64 + arm64e</p>
 </div>
             </div>
         </div>

@@ -1,50 +1,59 @@
 # Alipay2NFC
 
-把支付宝「碰一碰」的 NFC 唤起重定向到你的第二个支付宝（多开客户端）。
+让支付宝「碰一碰」唤起你指定的第二个支付宝客户端。
 
-贴商户的碰一碰贴纸时，iOS 永远只唤起官方支付宝 —— 因为只有它通过了 `render.alipay.com` 的 AASA 校验，多开包的 bundle id 不在列表里。本插件在官方支付宝收到 URL 的那一刻把它转交给你的多开客户端。
+## 解决的问题
 
-## 效果
+在越狱设备上用 Crane 之类的工具多开支付宝之后，贴商户的碰一碰贴纸时，系统始终唤起官方客户端，第二个账号用不上 NFC 付款。
 
-```
-贴碰一碰贴纸 → 官方支付宝收到 URL → 本插件拦截 → 拉起「支付宝2」进入碰一碰付款页
-```
+碰一碰贴纸里是一条指向 `render.alipay.com` 的链接，iOS 按 Universal Link / App Clip 规则投递，而只有官方客户端在该域名下完成过关联声明 —— 多开客户端不在其中，系统不会把链接交给它。
 
-## 特点
+## 做什么
 
-- **不需要改 Info.plist，不需要重新签名多开包**
-- **不需要任何前置操作**，装完即用
-- 多开包的 bundle id 运行时自动发现，任意多开工具都适用
-- 纯 `libobjc` 实现，无 CydiaSubstrate 依赖，无配置文件
-- 开源地址：https://github.com/5hux1n/Alipay2NFC
+本插件在官方客户端处理这次碰一碰的那一刻接管过来，把付款交给你的多开客户端完成。
+
+## 使用
+
+打开官方支付宝，贴商户的碰一碰贴纸即可。多开客户端会在后台被唤起，无需提前打开，也不用做任何配置。
+
+## 兼容性
+
+- 越狱：rootful、rootless、roothide
+- 架构：arm64、arm64e
+- 系统：iOS 14 及以上
+- 多开客户端：任意多开工具生成的客户端
 
 ## 已知限制
 
-冷启动贴纸时官方支付宝会先闪一下 —— iOS 只认官方包，必须先把 URL 交给它，插件才有机会转发。
+冷启动贴纸时，官方客户端会先生效再转交，因此会短暂出现一下。
 
 ---
 
 # English
 
-Redirect Alipay's **碰一碰** (tap-to-pay NFC) trigger to your own second / multi-instance Alipay client.
+Redirect Alipay's 碰一碰 (NFC tap-to-pay) to the Alipay client of your choice.
 
-When you tap a merchant's NFC sticker, iOS always launches the official Alipay — only it passes
-the AASA check for `render.alipay.com`; the clone's bundle ID is not in the list. This tweak makes
-the official app hand the tap over to your clone the moment it receives the URL.
+## The problem
 
-```
-Tap NFC sticker → official Alipay receives URL → tweak intercepts → launches "支付宝2" into the tap-to-pay page
-```
+After duplicating Alipay on a jailbroken device with tools like Crane, tapping a merchant's sticker always launches the official client — the second account can't use NFC payment.
 
-## Highlights
+The sticker carries a link to `render.alipay.com`. iOS delivers it as a Universal Link / App Clip, and only the official client has an association claim for that domain, so iOS never hands the link to the clone.
 
-- **No `Info.plist` modification, no re-signing of the clone**
-- **No setup steps** — works right after install
-- The clone's bundle ID is discovered at runtime — works with any multi-instance tool
-- Pure `libobjc`, no CydiaSubstrate, no config file
-- Source: https://github.com/5hux1n/Alipay2NFC
+## What it does
+
+The tweak takes over at the moment the official client processes the tap and hands the payment to your chosen client.
+
+## Usage
+
+Open the official Alipay and tap the merchant's sticker. The second client is brought up in the background — no need to open it first, and no configuration is required.
+
+## Compatibility
+
+- Jailbreak: rootful, rootless, roothide
+- Architecture: arm64, arm64e
+- iOS: 14.0+
+- Second client: any created by any multi-instance tool
 
 ## Known limitation
 
-On a cold launch the official Alipay briefly appears first — iOS only recognises the official app,
-so the URL must reach it before the tweak can forward it.
+On a cold launch the official client briefly takes effect before handing over, so it appears for a moment.
