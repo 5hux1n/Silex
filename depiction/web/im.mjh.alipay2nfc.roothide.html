@@ -290,7 +290,7 @@
                 </div>
                 <div class="cell">
                     <div class="title">版本 Version</div>
-                    <div class="text">3.4.0</div>
+                    <div class="text">3.4.1</div>
                     <br><br>
                 </div>
                 <div class="cell">
@@ -315,6 +315,10 @@
             </div><div class="changelog_entry">
                 <h4>3.4.0</h4>
                 <div class="md_view"><p>新增设置面板：总开关（想用官方账号付款时直接关掉，无需卸载或在 Choicy 屏蔽）、跳转前询问、多开客户端选择；改动即时生效无需注销。多开客户端改为自动枚举识别，无需先打开一次。支持任意数量多开包。</p>
+</div>
+            </div><div class="changelog_entry">
+                <h4>3.4.1</h4>
+                <div class="md_view"><p>修复设置不生效：改为直接读取配置文件（不再走 CFPreferences 的 cfprefsd IPC，避免沙盒下读不到），并补充 roothide/rootless 的 jbroot 路径兜底。现在总开关与「跳转前询问」均按设置生效。</p>
 </div>
             </div>
         </div>
