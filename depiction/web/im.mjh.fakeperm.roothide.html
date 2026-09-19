@@ -307,7 +307,7 @@ iPad 9 - iOS 15.4.1
                 </div>
                 <div class="cell">
                     <div class="title">版本 Version</div>
-                    <div class="text">8.6.0</div>
+                    <div class="text">8.7.0</div>
                     <br><br>
                 </div>
                 <div class="cell">
@@ -326,6 +326,32 @@ iPad 9 - iOS 15.4.1
         </div>
         <div class="changelog">
             <div class="changelog_entry">
+                <h4>8.7.0</h4>
+                <div class="md_view"><p>【机型 / 版本数据更新】</p>
+<ul>
+<li>机型伪装新增 iPhone Duo（折叠屏，iPhone19,4）与 iPhone 18 全系：18 Pro（iPhone19,2）、18 Pro Max US/Global（iPhone19,3 / iPhone19,7）</li>
+<li>iOS 版本伪装更新至 iOS 27.0（24A437），补齐 iOS 26 缺失补丁：26.5.2 / 26.6 / 26.6.1 / 26.6.2 / 26.7</li>
+</ul>
+<p>【定位】</p>
+<ul>
+<li>修复改完定位后伪装会短暂失效：高德地图等 App 会出现「前几秒是目标位置、随后回落到真实位置」，以往必须杀掉 App 才能恢复。现在即使不重启 App 也持续生效，不再依赖杀进程</li>
+<li>兼容高德 / 百度 SDK 后续版本新增的定位回调，避免真实坐标被透传</li>
+</ul>
+<p>【相机】</p>
+<ul>
+<li>更换虚拟照片不再需要杀 App：重新选图 / 旋转 / 翻转后，直接回 App 拍照即生效，支持连续更换不同照片</li>
+</ul>
+<p>【版本伪装】</p>
+<ul>
+<li>修复两段版本号（27.0 / 26.7 / 18.5 等）不生效的问题：此前会在 operatingSystemVersion 中静默回退真实版本</li>
+</ul>
+<p>【地图选择器】</p>
+<ul>
+<li>修复拖动地图后地名与经纬度不一致：反查请求乱序返回，旧结果会覆盖新结果</li>
+<li>修复国外地点只显示经纬度：地理反查改为强引用并取消上一次请求，地名按 地区 / 城市 / 行政 / 国家 / 街道 逐级回退</li>
+</ul>
+</div>
+            </div><div class="changelog_entry">
                 <h4>8.6.0</h4>
                 <div class="md_view"><p>1、新增权限配置页入口右侧显示当前配置值。<br />
 2、修复配置导入导出清除缺失字段的问题。<br />
