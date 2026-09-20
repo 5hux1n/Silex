@@ -290,7 +290,7 @@
                 </div>
                 <div class="cell">
                     <div class="title">版本 Version</div>
-                    <div class="text">3.4.1</div>
+                    <div class="text">3.5.0</div>
                     <br><br>
                 </div>
                 <div class="cell">
@@ -319,6 +319,10 @@
             </div><div class="changelog_entry">
                 <h4>3.4.1</h4>
                 <div class="md_view"><p>修复设置不生效：改为直接读取配置文件（不再走 CFPreferences 的 cfprefsd IPC，避免沙盒下读不到），并补充 roothide/rootless 的 jbroot 路径兜底。现在总开关与「跳转前询问」均按设置生效。</p>
+</div>
+            </div><div class="changelog_entry">
+                <h4>3.5.0</h4>
+                <div class="md_view"><p>修复三处：1) 设置改动不再需要注销 —— 去掉配置缓存，每次贴纸现读配置文件；2) 询问模式改为先进官方付款页再弹窗，不再在界面未起来时弹出；3) 询问时选「用官方支付」可正常完成付款（原先会因 URL 被拦下而进不去付款页）。</p>
 </div>
             </div>
         </div>
