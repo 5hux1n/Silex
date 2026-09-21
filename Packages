@@ -5,9 +5,9 @@ Maintainer: Junhong <mail@mjh.im>
 Depends: firmware (>=15.0), mobilesubstrate (>= 0.9.5000)
 Filename: ./pkg/danmutool.deb
 Size: 399348
-MD5sum: b5b28c2bf986230527b0d51fca4551d1
-SHA1: 8f29d2ff5b62ddad58deca314f3367d9329a06b8
-SHA256: 70f9f3d90f5e8a23d28d1613901fb1789ecf7ed1d868cfbe051e44e2a4d61cd7
+MD5sum: 8d8e25e8d2dd53c796a3183bcf14b842
+SHA1: b79781db17078a252a2f62e791a84d1a1512564b
+SHA256: fe4ccb1e9f04e46880ffd0a106afb5badef278b68232ae72611b5155a4db6086
 Section: Tweaks
 Description: 支持抖音/小红书/快手/视频号直播弹幕快捷发送
 Author: Junhong <mail@mjh.im>
@@ -27,10 +27,10 @@ Maintainer: Junhong
 Installed-Size: 168
 Depends: firmware (>=15.0)
 Filename: ./pkg/fanqiefn.deb
-Size: 5598
-MD5sum: b9e2b9f2f117c6746de6ab087ab2769e
-SHA1: 68ea05e03d21b30a0982ae027afe940efb522686
-SHA256: 4a10c1616c431736ee380a5aa107dee6700d91108b5bf007610792eca7fcbf9e
+Size: 5592
+MD5sum: d2e18427461a9d28627ecc4d67fa6dc3
+SHA1: b35a6deab8de9142b949da3fd4165af553bfd807
+SHA256: 4350dca8a1dd663f20d4013fdbf2e086796888c6383570ac24bf167d752dae7b
 Section: Tweaks
 Description: 番茄小说伪装通知和小组件权限，去除添加小组件弹窗、去除开启通知提醒
 Name: 番茄净化
@@ -48,10 +48,10 @@ Depends: firmware (>=14.0), preferenceloader
 Conflicts: com.yourname.alipaynfcredirect
 Replaces: com.yourname.alipaynfcredirect
 Filename: ./pkg/im.mjh.alipay2nfc.deb
-Size: 22872
-MD5sum: d47cd7da43a6aed01edcbbb116a3b76f
-SHA1: b0e40351590d06891caa3c4cfe867849c825690e
-SHA256: 61a9c4471d4e27bfbdb042206e733b99b774bd094197f41decdad1756156debd
+Size: 22874
+MD5sum: f1a6e0b700aab18ec7995c883e88d6ae
+SHA1: 39257f1d335757d56107741564ed0cfd4b96d980
+SHA256: db27a445dbbdefbffbd8744044fbdef0bb5b17c6ae1880a5d628ebcd21a57e88
 Section: Tweaks
 Description: 让支付宝「碰一碰」唤起你指定的第二个支付宝客户端 — 多开账号也能用 NFC 付款。开源：https://github.com/5hux1n/Alipay2NFC
 Author: Junhong
@@ -70,10 +70,10 @@ Depends: firmware (>=14.0), preferenceloader
 Conflicts: com.yourname.alipaynfcredirect
 Replaces: com.yourname.alipaynfcredirect
 Filename: ./pkg/im.mjh.alipay2nfc.roothide.deb
-Size: 22886
-MD5sum: 261b23328f6b24ada12d83ff2ef606ba
-SHA1: ea188e2345cdb5c23fd105e49ccf23c29f6a2471
-SHA256: 2143456cc0bc2365691b5b1c916bec0c2d4da33c15130856ed3e9d8808c91bb9
+Size: 22882
+MD5sum: 701b18ad271fab8be0d27d2091856d3b
+SHA1: 0a5d569c2aa2f52ef64e86eccdc16d14b4a8fca5
+SHA256: 9255f4a39fb9dd8fe2af31e3c29d24955cbd6e93268181a87d052a411041ac2f
 Section: Roothide
 Description: 让支付宝「碰一碰」唤起你指定的第二个支付宝客户端 — 多开账号也能用 NFC 付款。开源：https://github.com/5hux1n/Alipay2NFC
 Author: Junhong
@@ -91,9 +91,9 @@ Installed-Size: 1452
 Depends: firmware (>=15.0), preferenceloader
 Filename: ./pkg/im.mjh.fakeperm_8.3.0_iphoneos-arm64.deb
 Size: 258160
-MD5sum: cfb7a3f9e99a565e385b4d11970255f5
-SHA1: 6e9e25b9cd13b80929677bfdaffaf4709a3d3ac1
-SHA256: e9d67d19366fb12c4707b644ad0d51af1782c0928a640e818a8891c315b26c49
+MD5sum: 660a0b8a245570399e19d4e0b039d9f0
+SHA1: ce7dc4501066132e0a0de363975581f3f5873976
+SHA256: 967714daab38070d99d8fc9b063eceef6875685823dcca3167f52de24f56d461
 Section: Tweaks
 Description: 针对任意 App 单独配置虚拟权限，防止隐私被过度索要。
 Author: Junhong
@@ -110,10 +110,10 @@ Maintainer: Junhong
 Installed-Size: 1520
 Depends: firmware (>=15.0), preferenceloader
 Filename: ./pkg/im.mjh.fakeperm_8.5.0_iphoneos-arm64.deb
-Size: 265246
-MD5sum: a3f65972b57b98e469f321d0278f6763
-SHA1: 36ee77473065c92aefd9629e77d6d46a2928ce61
-SHA256: 3274cc0ffec9d5f7f6a2fc96717ef4561d787b03b13ef63314e2e5e180bd17c3
+Size: 265242
+MD5sum: 2e87c13cbdc21c32d6c7a1380d184e71
+SHA1: 9aa6db58477754c68c599fc70c7417f7e4153cef
+SHA256: 6e15926272e7f7b181968fb154b2db0f2600c649232b423239e1754654bbbb62
 Section: Tweaks
 Description: 针对任意 App 单独配置虚拟权限，防止隐私被过度索要。
 Author: Junhong
@@ -130,10 +130,10 @@ Maintainer: Junhong
 Installed-Size: 1520
 Depends: firmware (>=15.0), preferenceloader
 Filename: ./pkg/im.mjh.fakeperm_8.6.0_iphoneos-arm64.deb
-Size: 266014
-MD5sum: cd39cbb89702cbe8bf7376a1b1c075d2
-SHA1: 10b8ace66c453a0fe779023ab95e4b6fc806052b
-SHA256: ba1e45bbba9ffca63a10c624318c524223dfd5372979c512ce5893aadefde338
+Size: 266006
+MD5sum: 273aea66166cdf00d78c72f03318e9ed
+SHA1: 644dd735b46fc64d52538a20f2a18b73b6e92f22
+SHA256: 0fcdae1f6f95cc49f6f13c64798dd40fcbcf75aa4e5fd5e37a5a9c9fb3261ec1
 Section: Tweaks
 Description: 针对任意 App 单独配置虚拟权限，防止隐私被过度索要。
 Author: Junhong
@@ -150,10 +150,10 @@ Maintainer: Junhong
 Installed-Size: 1588
 Depends: firmware (>=15.0), preferenceloader
 Filename: ./pkg/im.mjh.fakeperm_8.7.0_iphoneos-arm64.deb
-Size: 277678
-MD5sum: be6727a92082ca70f0c59dc69561f55f
-SHA1: 9fbefe6be008c1f9304e644677fbae5e0a329643
-SHA256: 702d6675eafa32da856d1d607ef085f04217f3a3d2b3e7f920a076544a5d23ce
+Size: 277680
+MD5sum: 61f16eff3d20ae7796c2d327e023c77c
+SHA1: 7fb992f34b1eebae612024496cac25a5a85cd1b4
+SHA256: 499f9cdd74ba3fc3b8116da6ac038b5a331b091e0748d05685989a16d9bed559
 Section: Tweaks
 Description: 针对任意 App 单独配置虚拟权限，防止隐私被过度索要。
 Author: Junhong
@@ -170,10 +170,10 @@ Maintainer: Junhong
 Installed-Size: 1588
 Depends: firmware (>=15.0), preferenceloader
 Filename: ./pkg/im.mjh.fakeperm_8.7.1_iphoneos-arm64.deb
-Size: 276368
-MD5sum: 982927747bce22af664ff4b7622e7a6f
-SHA1: 43d545231cc4bf144fceff9df5d1da0beab0f7c9
-SHA256: 0e7e7a3cbed3c8a60f691f74032788aed365a35fe9187b50c65ab86f6c5a5ba1
+Size: 276370
+MD5sum: 039fb470f3d4800c51c7d71921890dd3
+SHA1: 3531d7dd04c971dda16c0624b4e231c10ddb04f1
+SHA256: 5a2d020684a01bc5038e5268fa8646db9ae43252934f8b6e53f556e827c1d52d
 Section: Tweaks
 Description: 针对任意 App 单独配置虚拟权限，防止隐私被过度索要。
 Author: Junhong
@@ -190,10 +190,10 @@ Maintainer: Junhong
 Installed-Size: 1588
 Depends: firmware (>=15.0), preferenceloader
 Filename: ./pkg/im.mjh.fakeperm.deb
-Size: 282272
-MD5sum: 6278de74dcdbcc687c6930d4623bfea2
-SHA1: a62b44cb829d4908ddf753038c63151b770b2d94
-SHA256: 661b879c0a3d38ac558cee986e3165ab3ae6994adc3c1958069722154496ca5e
+Size: 282270
+MD5sum: 63cb7e6f5b277374563f1f5278ca9d68
+SHA1: 7221b9a944acef6be237aa1d025a079a2efe6566
+SHA256: c80c86537125f9ac23cefa4e1d2515c7fad5808cb76ea95e3d136b691d19369e
 Section: Tweaks
 Description: 针对任意 App 单独配置虚拟权限，防止隐私被过度索要。
 Author: Junhong
@@ -210,10 +210,10 @@ Maintainer: Junhong
 Installed-Size: 1588
 Depends: firmware (>=15.0), preferenceloader
 Filename: ./pkg/im.mjh.fakeperm_8.7.0_iphoneos-arm64e.deb
-Size: 277760
-MD5sum: 309aad950fc9dbb359e134c6ff5e3464
-SHA1: 20d72a0b7797d2db88ec7808032cf857d0fb09e5
-SHA256: 1269f1ab71eedffa5e7db81a6e16e6e2cc78e44fbe07d8587dca01b1062cbde0
+Size: 277764
+MD5sum: 86b388552b69b41c47b715a83d7e8cc6
+SHA1: 9eebe0bb707ce2f10fed51e65b8b59ea960c7277
+SHA256: a58c271cff0f371faedd165d65a056751a028cb42fd4e10652affb7e35056e1f
 Section: Roothide
 Description: 针对任意 App 单独配置虚拟权限，防止隐私被过度索要。
 Author: Junhong
@@ -230,10 +230,10 @@ Maintainer: Junhong
 Installed-Size: 1588
 Depends: firmware (>=15.0), preferenceloader
 Filename: ./pkg/im.mjh.fakeperm_8.7.1_iphoneos-arm64e.deb
-Size: 276276
-MD5sum: 1e1348757310e137cdc4f4c4eedc85c4
-SHA1: 5606f9d34be62fef9f30ae137cb9e33207a05d15
-SHA256: 0c69e1aac3c00318a7e4ebbc217579b9cb99ebbb3408fa9841bb2498f31d008e
+Size: 276274
+MD5sum: 241a1388e72956fdae5ba6d2aace88db
+SHA1: 60507a64b1e41cbf44159b0357afb59acdb6b788
+SHA256: ddfc32cf633da0e10e6250d97d578e9848ab9d0b518bd1c5b5448c8689fe96a8
 Section: Roothide
 Description: 针对任意 App 单独配置虚拟权限，防止隐私被过度索要。
 Author: Junhong
@@ -250,10 +250,10 @@ Maintainer: Junhong
 Installed-Size: 1588
 Depends: firmware (>=15.0), preferenceloader
 Filename: ./pkg/im.mjh.fakeperm.roothide.deb
-Size: 282152
-MD5sum: 06952fd196f840d634cac50f6049e445
-SHA1: 1b194b60f97a3df48f9b815fc28b4b0a3b8ca79e
-SHA256: 4ed89a28b712018d88cdb40224413ff420a42304aa294886bae447cd18105bda
+Size: 282156
+MD5sum: 10e90676a928a9c1399d0db67ed9e76b
+SHA1: c7d260df07ae254b36aff66f0ad05c2f7ba94419
+SHA256: f0007b08ee12c250c1ba34bcb56c2d4af8f19ab44f14efc1cd3cf1c5e26bf1dd
 Section: Roothide
 Description: 针对任意 App 单独配置虚拟权限，防止隐私被过度索要。
 Author: Junhong
@@ -271,9 +271,9 @@ Installed-Size: 272
 Depends: firmware (>=15.0), mobilesubstrate
 Filename: ./pkg/im.mjh.wclocate.deb
 Size: 35124
-MD5sum: 473b8a89f0955db9c9dfb3407eeb58b9
-SHA1: 01dfaa5eab8e2f23ca7f690be5856370ec07658c
-SHA256: 557250c87af8b8a9a2381bd98c0d0f8de5ccf20d940a4b957900aae4e764f0aa
+MD5sum: 2093d4a684a48c3c8f68710d26ccc505
+SHA1: edc794d2ca372bf8592dcbdf5567201314a212cb
+SHA256: aacc542e7595f217a67ccf86ec4d9919bd623c61115245641063f7286b9d8b07
 Section: Tweaks
 Description: 微信虚拟定位 — 支持巨魔/越狱/证书自签，地图选点、地点搜索、拖拽定位、海拔伪装。开源地址：已在 github 开源，地址：https://github.com/11195666/wclocate
 Author: Junhong
@@ -283,22 +283,46 @@ SileoDepiction: https://apt.mjh.im/depiction/native/im.mjh.wclocate.json
 ModernDepiction: https://apt.mjh.im/depiction/native/im.mjh.wclocate.json
 Icon: https://apt.mjh.im/assets/im.mjh.wclocate/icon.png
 
-Package: im.mjh.xianyuhelper
-Version: 1.0.0
+Package: im.mjh.xianyuadblock
+Version: 2.0
 Architecture: iphoneos-arm64
 Maintainer: Junhong
-Installed-Size: 204
+Installed-Size: 224
 Depends: firmware (>=15.0), mobilesubstrate
-Filename: ./pkg/im.mjh.xianyuhelper.deb
-Size: 18296
-MD5sum: 3e5c3541451cd30e5a3c9682146d5831
-SHA1: ee0c4889b43600220efb762fb57280839459dfcd
-SHA256: 431df1079fa0c8507f419f208d8151df3d2573137b9283986e7f74c20cf61092
+Conflicts: im.mjh.xianyuhelper, im.mjh.xianyuhelper.roothide
+Replaces: im.mjh.xianyuhelper, im.mjh.xianyuhelper.roothide
+Filename: ./pkg/im.mjh.xianyuadblock.deb
+Size: 23946
+MD5sum: 62e8d808897448979897344bb2d1ef40
+SHA1: 6743c3a95ebf5503c0bae3835954650184de72c0
+SHA256: 85f2f20cfce03f3265a9a6e615dae8189781475f350343a7aad9e75314fff7e3
 Section: Tweaks
-Description: 咸鱼助手 — 去除开屏广告，过滤搜索结果中的淘宝广告商品
+Description: 拦截闲鱼开屏广告（含切后台再回前台时的启动广告），过滤搜索结果中的淘宝广告商品
 Author: Junhong
-Name: 咸鱼助手
-Depiction: https://apt.mjh.im/depiction/web/im.mjh.xianyuhelper.html
-SileoDepiction: https://apt.mjh.im/depiction/native/im.mjh.xianyuhelper.json
-ModernDepiction: https://apt.mjh.im/depiction/native/im.mjh.xianyuhelper.json
-Icon: https://apt.mjh.im/assets/im.mjh.xianyuhelper/icon.png
+Name: 闲鱼去广告助手
+Depiction: https://apt.mjh.im/depiction/web/im.mjh.xianyuadblock.html
+SileoDepiction: https://apt.mjh.im/depiction/native/im.mjh.xianyuadblock.json
+ModernDepiction: https://apt.mjh.im/depiction/native/im.mjh.xianyuadblock.json
+Icon: https://apt.mjh.im/assets/im.mjh.xianyuadblock/icon.png
+
+Package: im.mjh.xianyuadblock.roothide
+Version: 2.0
+Architecture: iphoneos-arm64e
+Maintainer: Junhong
+Installed-Size: 224
+Depends: firmware (>=15.0), mobilesubstrate
+Conflicts: im.mjh.xianyuhelper, im.mjh.xianyuhelper.roothide
+Replaces: im.mjh.xianyuhelper, im.mjh.xianyuhelper.roothide
+Filename: ./pkg/im.mjh.xianyuadblock.roothide.deb
+Size: 23896
+MD5sum: 9e3bbd5b70d9842dadda7ce65f10843f
+SHA1: 87ef631913153770de20f5e44cee08c17be1c6d8
+SHA256: 2ee7e2f29cbbe2b89fd950b7f8176a1fa3cb83b25835ff97d8167f10c27d8d36
+Section: Roothide
+Description: 拦截闲鱼开屏广告（含切后台再回前台时的启动广告），过滤搜索结果中的淘宝广告商品
+Author: Junhong
+Name: 闲鱼去广告助手 (Roothide)
+Depiction: https://apt.mjh.im/depiction/web/im.mjh.xianyuadblock.roothide.html
+SileoDepiction: https://apt.mjh.im/depiction/native/im.mjh.xianyuadblock.roothide.json
+ModernDepiction: https://apt.mjh.im/depiction/native/im.mjh.xianyuadblock.roothide.json
+Icon: https://apt.mjh.im/assets/im.mjh.xianyuadblock.roothide/icon.png
